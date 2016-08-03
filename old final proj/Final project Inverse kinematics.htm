@@ -1,0 +1,367 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<!-- saved from url=(0074)http://www.cc.gatech.edu/classes/AY2012/cs4496_spring/CS4496/Project4.html -->
+<HTML lang=en xml:lang="en" xmlns="http://www.w3.org/1999/xhtml"><HEAD><TITLE>Final project: Inverse kinematics</TITLE>
+<META content="text/html; charset=UTF-8" http-equiv=Content-Type>
+<META name=GENERATOR content="MSHTML 9.00.8112.16457">
+<META name=iWeb-Build content=local-build-20120816>
+<META content=IE=EmulateIE7 http-equiv=X-UA-Compatible>
+<META name=viewport content=width=700><LINK rel=stylesheet type=text/css 
+href="Final%20project%20Inverse%20kinematics_files/Project4.css" 
+media=screen,print><!--[if lt IE 8]><LINK rel=stylesheet type=text/css 
+href="Final%20project%20Inverse%20kinematics_files/Project4IE.css" 
+media=screen,print><![endif]--><!--[if gte IE 8]><link rel='stylesheet' type='text/css' media='screen,print' href='Media/IE8.css'/><![endif]-->
+<SCRIPT type=text/javascript 
+src="Final%20project%20Inverse%20kinematics_files/iWebSite.js"></SCRIPT>
+
+<SCRIPT type=text/javascript 
+src="Final%20project%20Inverse%20kinematics_files/Project4.js"></SCRIPT>
+</HEAD>
+<BODY style="MARGIN: 0pt; BACKGROUND: rgb(255,255,255)" onload=onPageLoad();>
+<DIV style="TEXT-ALIGN: center">
+<DIV 
+style="POSITION: relative; TEXT-ALIGN: left; MARGIN: 0px auto; WIDTH: 700px; WORD-WRAP: break-word; BACKGROUND: rgb(255,255,255); OVERFLOW: hidden" 
+id=body_content>
+<DIV 
+style="Z-INDEX: 0; POSITION: relative; WIDTH: 700px; FLOAT: left; MARGIN-LEFT: 0px" 
+id=nav_layer>
+<DIV style="LINE-HEIGHT: 0px; HEIGHT: 0px" class=bumper></DIV>
+<DIV style="LINE-HEIGHT: 0px; HEIGHT: 0px; CLEAR: both" 
+class=spacer></DIV></DIV>
+<DIV 
+style="Z-INDEX: 10; POSITION: relative; LINE-HEIGHT: 0px; WIDTH: 700px; FLOAT: left; HEIGHT: 0px; MARGIN-LEFT: 0px" 
+id=header_layer>
+<DIV style="LINE-HEIGHT: 0px; HEIGHT: 0px" class=bumper></DIV></DIV>
+<DIV style="Z-INDEX: 5; POSITION: relative; WIDTH: 700px; MARGIN-LEFT: 0px" 
+id=body_layer>
+<DIV style="LINE-HEIGHT: 0px; HEIGHT: 0px" class=bumper></DIV>
+<DIV 
+style="Z-INDEX: 1; POSITION: absolute; WIDTH: 630px; HEIGHT: 49px; TOP: 22px; LEFT: 35px" 
+id=id1 class="style_SkipStroke shape-with-text">
+<DIV 
+style="PADDING-BOTTOM: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px" 
+class="text-content graphic_shape_layout_style_default_External_630_49">
+<DIV class=graphic_shape_layout_style_default>
+<P style="PADDING-BOTTOM: 0pt; PADDING-TOP: 0pt" class=Title>Final project: 
+Inverse kinematics</P></DIV></DIV></DIV>
+<DIV 
+style="Z-INDEX: 1; POSITION: absolute; WIDTH: 630px; HEIGHT: 1px; TOP: 1px; LEFT: 35px" 
+class=tinyText>
+<DIV style="POSITION: relative; WIDTH: 630px"><IMG 
+style="POSITION: absolute; WIDTH: 630px; HEIGHT: 1px; TOP: 0px; LEFT: 0px" 
+alt="" src="Final%20project%20Inverse%20kinematics_files/shapeimage_1.jpg"> 
+</DIV></DIV>
+<DIV style="LINE-HEIGHT: 1px; HEIGHT: 1px" class=tinyText></DIV>
+<DIV 
+style="Z-INDEX: 1; POSITION: relative; MARGIN-TOP: 108px; WIDTH: 630px; MARGIN-LEFT: 35px" 
+class="style_SkipStroke_2 shape-with-text flowDefining">
+<DIV 
+style="PADDING-BOTTOM: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px" 
+class="text-content style_External_630_5101">
+<DIV class=style>
+<P style="PADDING-TOP: 0pt" class=Heading_1>Deadline: Apr 30 11:30AM<BR></P>
+<P class=Heading_1><BR></P>
+<P class=Heading_1>Project Description<BR></P>
+<P class=Body>In this project, you will formulate an <SPAN 
+class=style_1>unconstrained optimization</SPAN> to solve an inverse kinematics 
+problem. <BR></P>
+<P class=Body>Task 1: Given a leg model, solve inverse kinematics to move the 
+handle on the foot to the marker in the space <BR></P>
+<P class=Body>Task 2: The input to your system is a set of marker trajectories 
+from a motion capture system. Your inverse kinematics solver will produce a set 
+of poses (joint configurations) that match the markers<BR></P>
+<P class=Body><SPAN style="LINE-HEIGHT: 28px" class=style_2><BR></SPAN></P>
+<P class=paragraph_style>Requirement<BR></P>
+<OL>
+  <LI style="LINE-HEIGHT: 20px; TEXT-INDENT: -14px; PADDING-LEFT: 14px" 
+  class=full-width>
+  <P style="TEXT-INDENT: -14px" class=paragraph_style_1><SPAN 
+  style="FONT-SIZE: 15px" class=Bullet>•</SPAN><SPAN style="WIDTH: 9px" 
+  class=inline-block></SPAN>Display the resulting motion sequence 
+(poses)<BR></P>
+  <LI style="LINE-HEIGHT: 20px; TEXT-INDENT: -14px; PADDING-LEFT: 14px" 
+  class=full-width>
+  <P style="TEXT-INDENT: -14px" class=paragraph_style_1><SPAN 
+  style="FONT-SIZE: 15px" class=Bullet>•</SPAN><SPAN style="WIDTH: 9px" 
+  class=inline-block></SPAN>Compute the error of your solution for each frame 
+  (sum of square of positional constraints)<BR></P></LI></OL>
+<P class=Body><SPAN class=style_1><BR></SPAN></P>
+<P class=Body><SPAN class=style_1>Skeleton code<BR></SPAN></P>
+<P class=Body><A 
+title=http://www.cc.gatech.edu/classes/AY2012/cs4496_spring/code/Project4.zip 
+href="http://www.cc.gatech.edu/classes/AY2012/cs4496_spring/code/Project4.zip">skeleton 
+code without vl and fltk for Windows</A> (2.5M)<BR></P>
+<P class=Body><A 
+title=http://www.cc.gatech.edu/classes/AY2012/cs4496_spring/code/Project4_source.zip 
+href="http://www.cc.gatech.edu/classes/AY2012/cs4496_spring/code/Project4_source.zip">skeleton 
+code without vl and fltk for Linux and Mac OSX Leopard</A> (0.5M)<SPAN 
+class=style_1><BR></SPAN></P>
+<P class=Body><A 
+title=http://www.cc.gatech.edu/classes/AY2012/cs4496_spring/code/project4_lion_OSX.zip 
+href="http://www.cc.gatech.edu/classes/AY2012/cs4496_spring/code/project4_lion_OSX.zip">skeleton 
+code for Mac OSX Lion</A> (0.5M) (FLTK and VL source code is included but not 
+compiled)<SPAN class=style_1><BR></SPAN></P>
+<P class=Body><SPAN class=style_1><BR></SPAN></P>
+<P class=Body>To compile the skeleton code, you need to download FLTK 1.3 and VL 
+libraries. <BR></P>
+<P class=Body><SPAN class=style_1><BR></SPAN></P>
+<P class=Body>The skeleton code provides basic <SPAN class=style_1>forward 
+kinematics</SPAN> functionality that allows you to change the pose of the 
+character by adjusting each degree of freedom (DOF). The skeleton code reads in 
+a “skel” file, which defines the body links and joints of the character, as well 
+as the handle positions that match the mocap data (c3d files). Your task is to 
+add <SPAN class=style_1>inverse kinematics</SPAN> functionality to the skeleton 
+code. First, you need to take some time understanding how the skeleton code 
+works.<BR></P>
+<DIV class="paragraph Body">
+<DIV style="POSITION: relative; WIDTH: 622px; HEIGHT: 610px" 
+class="tinyText style_SkipStroke_1 inline-block"><IMG 
+style="BORDER-BOTTOM-STYLE: none; BORDER-LEFT-STYLE: none; WIDTH: 622px; BORDER-TOP-STYLE: none; HEIGHT: 610px; BORDER-RIGHT-STYLE: none" 
+alt="" 
+src="Final%20project%20Inverse%20kinematics_files/droppedImage.jpg"></DIV><BR></DIV>
+<P class=Body><BR></P>
+<DIV class="paragraph Body">
+<DIV style="POSITION: relative; WIDTH: 380px; HEIGHT: 222px" 
+class="tinyText style_SkipStroke_1 inline-block"><IMG 
+style="BORDER-BOTTOM-STYLE: none; BORDER-LEFT-STYLE: none; WIDTH: 380px; BORDER-TOP-STYLE: none; HEIGHT: 222px; BORDER-RIGHT-STYLE: none" 
+alt="" 
+src="Final%20project%20Inverse%20kinematics_files/droppedImage.png"></DIV><BR></DIV>
+<P class=Body><BR></P>
+<P class=Body>The main window has FLTK widgets that allow you to load a 
+character file and a constraint file (included in the skeleton code). You can 
+manipulate the cameras using the following commands once you load a 
+character.<BR></P>
+<P class=Body><BR></P>
+<P class=Body>Shift + left click: <SPAN class=style_1>rotate</SPAN> <BR></P>
+<P class=Body>&nbsp;&nbsp;&nbsp; yaw and pitch: move the cursor inside of the 
+yellow circle<BR></P>
+<P class=Body>&nbsp;&nbsp;&nbsp; roll: move the cursor outside of the yellow 
+circle<BR></P>
+<P class=Body>Shift + left Ctrl + left click: <SPAN 
+class=style_1>pan</SPAN><BR></P>
+<P class=Body>Shift + left Alt + left click: <SPAN 
+class=style_1>zoom<BR></SPAN></P>
+<P class=Body><SPAN class=style_1><BR></SPAN></P>
+<P class=Body>The “Joint Angles” window presents the user a set of sliders to 
+adjust the joint angles of the character. You can use them for forward 
+kinematics. Try to load “leg.skel” and “oneMarker.c3d”. Toggle those buttons 
+that have a laptop icon for different choices of visualization. After you are 
+familiar with the UI, restart the program and this time load in “full_body.skel” 
+and “walkRun.c3d”. Hit the “Play” button in the lower right corner of the main 
+window. You should see the marker positions animated on the screen.<SPAN 
+class=style_1><BR></SPAN></P>
+<P class=Body><BR></P>
+<P class=Body>Now let’s get into the source code. Where is the entry of the 
+program?&nbsp; The main function (Main.cpp). You realize the only thing the main 
+function does is to activate FLTK interface. So the real entry points of the 
+program are those FLTK callback functions (RealtimeIKui.cpp), which are defined 
+in UICallback.cpp. For example, if we hit the first button with a lego man icon, 
+UICallback::LoadModel_cb() is called. Tracing into that function, LoadModel() in 
+Command.cpp is called, which then instantiates an ArticulatedBody after some 
+file I/O code. Now it is time to examine ArticulatedBody.h and 
+ArticulatedBody.cpp to have a better understanding of how the body links, joint 
+angles, handles, and other information about the character are 
+organized.<BR></P>
+<P class=Body><BR></P>
+<DIV class="paragraph Body">
+<DIV style="POSITION: relative; WIDTH: 622px; HEIGHT: 386px" 
+class="tinyText style_SkipStroke_1 inline-block"><IMG 
+style="BORDER-BOTTOM-STYLE: none; BORDER-LEFT-STYLE: none; WIDTH: 622px; BORDER-TOP-STYLE: none; HEIGHT: 387px; BORDER-RIGHT-STYLE: none" 
+alt="" 
+src="Final%20project%20Inverse%20kinematics_files/droppedImage_1.jpg"></DIV><SPAN 
+class=tinyText></SPAN><SPAN style="LINE-HEIGHT: 28px" 
+class=style_2><BR></SPAN></DIV>
+<P class=Body><BR></P>
+<P class=Body>This is an overview of the main classes used to represent an 
+articulated character. We start from ArticulatedBody and its base class Model 
+(Model.h). The data members that require attention are Model::mLimbs, which 
+stores the body links, Model::mDoflist, which stores the information of joints 
+and the current joint angles, and Model::mHandleList, which stores the local 
+coordinates of the handles and their current global coordinates. These three 
+data members belong to three classes: TransformNode, Dof, and Marker.<BR></P>
+<P class=Body><BR></P>
+<P class=Body>TransformNode represents a body link. The most important data 
+members are TransformNode::mTransforms, TransformNode::mPrimitives, and 
+TransformNode::mChildren. mTransforms stores the sequence of transformations 
+between this body link and its parent link. For example, the mTransforms for the 
+foot link consists of one translational and two rotational transformations. The 
+translational transformation translates from the origin of the shin to the 
+origin of the foot. The two rotational transformations orient the foot based on 
+the current joint angles of the ankle. The transformation is represented by 
+class “Transform”, which we will examine later. mPrimitives stores the geometry 
+used to represent the body link. Although the data structure allows for multiple 
+geometry associated with a body link, mPrimitives usually only has one member 
+for the characters provided in this project. Each mPrimitive can be instantiated 
+as a cube or as a sphere (there are other types but we can ignore them for now). 
+Finally, let’s look at mChildren. mChildren stores a list of child links 
+associated with this body link. For example, mChildren of the left shin link has 
+only one member, a pointer pointing to the left foot link. Besides these data 
+members, TransformNode also stores the chain of transformations from the root to 
+the current link (mCurrentTransform), the chain from the root to the parent link 
+(mParentTransform), and the chain of local transformations (mLocalTransform). 
+These chains of transformations are very handy when we need to, say, compute the 
+global coordinates of the handle. We only need to update these chains when the 
+the values of DOFs are changed (e.g. the user adjusts the DOF sliders). Storing 
+these chains of transformations speeds up the performance significantly.<BR></P>
+<P class=Body><BR></P>
+<P class=Body>Popping one level up, we now look at the class Dof referred by 
+Model::mDoflist. Dof is the base class with three subclasses derived from it: 
+TranslateDof, ScaleDof, and EulerDof (see Translate.h, Scale.h, and 
+RotateEuler.h). Dof stores the current value of the associated joint angle in 
+mVal. This value will be referred by TransformNode::mTransforms to define the 
+current pose of the character.<BR></P>
+<P class=Body><BR></P>
+<P class=Body>Model::mHandleList has a list of handles instantiated from Marker 
+class (Marker.h), a very simple subclass derived from Sphere. It stores which 
+body link this handle resides (mNodeIndex), the local coordinates of the handle 
+(mOffset), and the current global coordinates of the handle 
+(mGlobalPos).<BR></P>
+<P class=Body><BR></P>
+<P class=Body>Finally, let’s look at the class Transform (Transform.h). 
+Transform has three subclasses: Translate, Scale, and RotateEuler. Each instance 
+of Transform represents a homogeneous transformation associated with a body 
+link. We should pay attention to all the virtual functions in Transform.h. 
+Apply() pushes a transformation matrix into the stack of OpenGL. Each subclass 
+has its own implementation of Apply(). For example, Translate::Apply() calls 
+glTranslated while RotateEuler::Apply() calls glRotated. Apply() is called in 
+TransformNode::Draw(). IsDof() returns a boolean to indicate whether this 
+transformation depends on any degrees of freedom. For example, the translation 
+between the origins of two body links only depends on the bone length, which is 
+not a degree of freedom and its IsDof() will return false. On the other hand, 
+all the rotational transformations involve DOFs that represent joint angles. 
+GetTransform() returns a 4 by 4 matrix of the transformation. This function is 
+used in many places in TransformNode.cpp and ArticulatedBody.cpp. GetDof(int i) 
+returns a pointer to the i-th DOF associated with this transformation. 
+GetDofCount() returns the number of DOFs associated with this transformation. 
+Finally, GetIndex() returns the type of this transformation.<BR></P>
+<P class=Body><BR></P>
+<P class=Body>How does the DOF slider trigger the update of the character’s 
+current pose?&nbsp; It all begins with UICallback::DofSliders_cb(). In this 
+callback function, Model::mDofList::SetDof() gets called, which updates the mVal 
+of the DOF and its associated transformation (see DofList::SetDof in Dof.cpp). 
+SetDof() only updates one DOF value and its corresponding transformation. How do 
+we update those chains of transformations of body links and global coordinates 
+of the handles? These updates are triggered by UI-&gt;mGLWindow-&gt;refresh() in 
+onTimer() in Main.cpp. We can find the definition of this refresh function in 
+PhyterGLWIndow.cpp, which contents only one line: redraw(). We can’t look inside 
+the redraw() function because it is defined by FLTK, but we know that redraw() 
+will trigger the callback function “draw()”, provided by the programmer (i.e. 
+you). So go to PhylterGLWindow::draw() and find the relevant part of the code: 
+if(mShowModel) clause. Continue to trace the code, you will find that 
+TransformNode::UpdateUpMatrix() is called and it updates the transformation 
+chains and global positions of the handles recursively for the entire 
+character.<BR></P>
+<P class=Body><BR></P>
+<P class=Body>Besides the data structures for the character, you should also 
+look into C3dFileInfo, a class that stores the desired positions for the 
+handles. Once a C3d file is loaded, you can use GetMarkerPos(int frameIndex, int 
+markerIndex) to query the desired value of a particular handle at a 
+particular&nbsp; time frame. The program will assume the order of handles in 
+Model::mHandleList is the same as the order in C3d file. So it is the user’s 
+responsibility to load a C3d file that matches the current character. If your 
+C3d is a recorded from a motion capture sequence, it is possible that some 
+markers are missing due to occlusion. In that case, C3d will store (0, 0, 0) as 
+the position of the missing marker. If you read in a missing marker at a 
+particular time frame, simply ignore it and not set a constraint on that marker 
+for that time frame.<BR></P>
+<P class=Body><BR></P>
+<P class=Body>Your inverse kinematics code should start from Solution() in 
+Command.cpp. This way you can use the button (with green liquid icon) on FLTK UI 
+to trigger your IK program. If you want to access the character in Solution(), 
+you can use UI-&gt;mData-&gt;mSelectedModel.<BR></P>
+<P class=Body><BR></P>
+<P class=Body>Ok. That was a quick tutorial on the skeleton code, but what 
+exactly do you have to do to implement IK solver? You probably have your own way 
+to organize the code, but the following description gives you some pointers to 
+begin. Let’s begin with the objective function:<BR></P>
+<P class=Body><BR></P>
+<P class=Body><SPAN class=style_3>F</SPAN>(<SPAN class=style_1>q</SPAN>) = || 
+<SPAN class=style_1>C</SPAN><SPAN class=style_4>1</SPAN>(<SPAN 
+class=style_1>q</SPAN>) ||<SPAN class=style_5>2</SPAN> + || <SPAN 
+class=style_1>C</SPAN><SPAN class=style_4>2</SPAN>(<SPAN class=style_1>q</SPAN>) 
+||<SPAN class=style_5>2</SPAN> +...+&nbsp; || <SPAN class=style_1>C</SPAN><SPAN 
+class=style_4>m</SPAN>(<SPAN class=style_1>q</SPAN>) ||<SPAN 
+class=style_5>2</SPAN><BR></P>
+<P class=Body><BR></P>
+<P class=Body>This objective function evaluates the sum of distance between each 
+handle and its desired location. The goal here is to minimize <SPAN 
+class=style_3>F</SPAN>(<SPAN class=style_1>q</SPAN>) by modifying <SPAN 
+class=style_1>q</SPAN> iteratively. We will use gradient descent method to do 
+that. Gradient descent says: at each iteration, compute the gradients of the 
+objective function using current <SPAN class=style_1>q</SPAN>, move along the 
+negative direction of the gradients for a small step from <SPAN 
+class=style_1>q</SPAN>, and assign the new position to <SPAN 
+class=style_1>q</SPAN>.<BR></P>
+<P class=Body><BR></P>
+<DIV class="paragraph Body">
+<DIV style="POSITION: relative; WIDTH: 346px; HEIGHT: 181px" 
+class="tinyText style_SkipStroke_1 inline-block"><IMG 
+style="BORDER-BOTTOM-STYLE: none; BORDER-LEFT-STYLE: none; WIDTH: 347px; BORDER-TOP-STYLE: none; HEIGHT: 181px; BORDER-RIGHT-STYLE: none" 
+alt="" 
+src="Final%20project%20Inverse%20kinematics_files/droppedImage_2.jpg"></DIV><BR></DIV>
+<P class=Body><BR></P>
+<P class=Body>In order to compute the gradients, we need to compute the Jacobian 
+(partial derivative of <SPAN class=style_1>C</SPAN> with respect to <SPAN 
+class=style_1>q</SPAN>). The core of this assignment is really about computing 
+the Jacobian. You can put the computation code anywhere you want, but one 
+helpful tip is to implement the derivative computation of each type of 
+transformation (e.g. Translate, RotateEuler) as a virtual function derived from 
+Transform class, similar to Transform::GetTransform(). In fact, the prototype of 
+this function is defined for you in Transform.h. <BR></P>
+<P class=Body><BR></P>
+<P class=Body>Mat4d GetDeriv(int dof)<BR></P>
+<P class=Body><BR></P>
+<P class=Body>This function should return a 4 by 4 matrix storing partial 
+derivative of the transformation matrix with respect to the DOF which order is 
+indicated by the argument “dof”. You need to implement this function for each of 
+the subclasses derived from Transform.h (namely, Translate, RotateEuler). Now, 
+when you try to compose your Jacobian, all you need to do is call GetDeriv() and 
+GetTransform() for the appropriate body links and DOFs.<BR></P>
+<P class=paragraph_style><BR></P>
+<P class=paragraph_style>Extra credits<BR></P>
+<OL>
+  <LI style="LINE-HEIGHT: 20px; TEXT-INDENT: -17px; PADDING-LEFT: 17px" 
+  class=full-width value=1>
+  <P style="TEXT-INDENT: -17px" class=paragraph_style_2><SPAN 
+  style="FONT-SIZE: 15px" class=Bullet>1.</SPAN><SPAN style="WIDTH: 4px" 
+  class=inline-block></SPAN>Use quaternion for shoulder and hip joints 
+  (HARD)<BR></P>
+  <LI style="LINE-HEIGHT: 20px; TEXT-INDENT: -17px; PADDING-LEFT: 17px" 
+  class=full-width value=2>
+  <P style="TEXT-INDENT: -17px" class=paragraph_style_2><SPAN 
+  style="FONT-SIZE: 15px" class=Bullet>2.</SPAN><SPAN style="WIDTH: 4px" 
+  class=inline-block></SPAN>Add an objective function <SPAN 
+  class=style_3>G</SPAN>(<SPAN class=style_1>q</SPAN>) (EASY)<BR></P>
+  <LI style="LINE-HEIGHT: 20px; TEXT-INDENT: -17px; PADDING-LEFT: 17px" 
+  class=full-width value=3>
+  <P style="TEXT-INDENT: -17px" class=paragraph_style_2><SPAN 
+  style="FONT-SIZE: 15px" class=Bullet>3.</SPAN><SPAN style="WIDTH: 4px" 
+  class=inline-block></SPAN>Add UI (sliders) to control the weight (<SPAN 
+  class=style_3>w</SPAN><SPAN class=style_6>i</SPAN>) of each marker 
+  (EASY)<BR></P>
+  <LI style="LINE-HEIGHT: 20px; TEXT-INDENT: -17px; PADDING-LEFT: 17px" 
+  class=full-width value=4>
+  <P style="TEXT-INDENT: -17px" class=paragraph_style_2><SPAN 
+  style="FONT-SIZE: 15px" class=Bullet>4.</SPAN><SPAN style="WIDTH: 4px" 
+  class=inline-block></SPAN>Implement adaptive step size <SPAN class=style_7>α 
+  </SPAN>(EASY)<BR></P>
+  <LI style="LINE-HEIGHT: 20px; TEXT-INDENT: -17px; PADDING-LEFT: 17px" 
+  class=full-width value=5>
+  <P style="TEXT-INDENT: -17px" class=paragraph_style_2><SPAN 
+  style="FONT-SIZE: 15px" class=Bullet>5.</SPAN><SPAN style="WIDTH: 4px" 
+  class=inline-block></SPAN>Achieve real-time (30 frames per second) 
+  (MEDIUM)<BR></P>
+  <LI style="LINE-HEIGHT: 20px; TEXT-INDENT: -17px; PADDING-LEFT: 17px" 
+  class=full-width value=6>
+  <P style="TEXT-INDENT: -17px" class=paragraph_style_2><SPAN 
+  style="FONT-SIZE: 15px" class=Bullet>6.</SPAN><SPAN style="WIDTH: 4px" 
+  class=inline-block></SPAN>Add playback functionality after solving IK 
+  (EASY)<BR></P></LI></OL>
+<P class=Body><BR></P></DIV>
+<DIV style="LINE-HEIGHT: 19px; HEIGHT: 19px; CLEAR: both" 
+class=tinyText></DIV></DIV></DIV>
+<DIV style="LINE-HEIGHT: 0px; HEIGHT: 0px" class=spacer></DIV></DIV>
+<DIV 
+style="Z-INDEX: 15; POSITION: relative; WIDTH: 700px; HEIGHT: 150px; MARGIN-LEFT: 0px" 
+id=footer_layer>
+<DIV style="LINE-HEIGHT: 0px; HEIGHT: 0px" 
+class=bumper></DIV></DIV></DIV></DIV></BODY></HTML>
