@@ -1,0 +1,8 @@
+/external/fltk-1.3.x-r7704/fltk-1.3.x-r7704/ide/vc2005/Debug Cairo/*.unsuccessfulbuild
+/external/fltk-1.3.x-r7704/fltk-1.3.x-r7704/ide/vc2005/Release Cairo/*.unsuccessfulbuild
+/external/fltk-1.3.x-r7704/fltk-1.3.x-r7704/ide/vc2005/Release/*.unsuccessfulbuild
+/external/fltk-1.3.x-r7704/fltk-1.3.x-r7704/ide/vc2005/tree_/*.unsuccessfulbuild
+/external/fltk-1.3.x-r7704/fltk-1.3.x-r7704/ide/vc2005/ipch/hello-22cfb601/hello_/*.ipch
+/external/vl-1.3.2/vl-1.3.2/ipch/vl-580b899/*.ipch
+*.tlog
+*.lastbuildstate
