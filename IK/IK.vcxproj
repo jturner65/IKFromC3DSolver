@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{61AB72D0-301F-4341-A44A-BCB600A72252}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>IK</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>../external/vl-1.3.2/vl-1.3.2/include;../external/fltk-1.3.x-r7704/fltk-1.3.x-r7704;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>../external/fltk-1.3.x-r7704/fltk-1.3.x-r7704/lib;../external/vl-1.3.2/vl-1.3.2/Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>comctl32.lib;glu32.lib;opengl32.lib;vl.lib;fltkd.lib;fltkgld.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>../external/fltk-1.3.x-r7704/fltk-1.3.x-r7704;../external/vl-1.3.2/vl-1.3.2/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>../external/fltk-1.3.x-r7704/fltk-1.3.x-r7704/lib;../external/vl-1.3.2/vl-1.3.2/Release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>comctl32.lib;glu32.lib;opengl32.lib;fltkgl.lib;vl.lib;fltk.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="src\ArticulatedBody.h" />
+    <ClInclude Include="src\C3dFileInfo.h" />
+    <ClInclude Include="src\Command.h" />
+    <ClInclude Include="src\Dof.h" />
+    <ClInclude Include="src\GLPrimitives.h" />
+    <ClInclude Include="src\IKSolver.h" />
+    <ClInclude Include="src\Marker.h" />
+    <ClInclude Include="src\Model.h" />
+    <ClInclude Include="src\ModelParser.h" />
+    <ClInclude Include="src\Node.h" />
+    <ClInclude Include="src\ParserDefs.h" />
+    <ClInclude Include="src\PhowardData.h" />
+    <ClInclude Include="src\PhylterGLWindow.h" />
+    <ClInclude Include="src\Primitive.h" />
+    <ClInclude Include="src\Quaternion.h" />
+    <ClInclude Include="src\RealTimeIKui.h" />
+    <ClInclude Include="src\RotateEuler.h" />
+    <ClInclude Include="src\Scale.h" />
+    <ClInclude Include="src\Trackball.h" />
+    <ClInclude Include="src\Transform.h" />
+    <ClInclude Include="src\TransformNode.h" />
+    <ClInclude Include="src\Translate.h" />
+    <ClInclude Include="src\UICallback.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\ArticulatedBody.cpp" />
+    <ClCompile Include="src\C3dFileInfo.cpp" />
+    <ClCompile Include="src\Command.cpp" />
+    <ClCompile Include="src\Dof.cpp" />
+    <ClCompile Include="src\GLPrimitives.cpp" />
+    <ClCompile Include="src\IKSolver.cpp" />
+    <ClCompile Include="src\Main.cpp" />
+    <ClCompile Include="src\Marker.cpp" />
+    <ClCompile Include="src\ModelParser.cpp" />
+    <ClCompile Include="src\PhylterGLWindow.cpp" />
+    <ClCompile Include="src\Quaternion.cpp" />
+    <ClCompile Include="src\RealTimeIKui.cpp" />
+    <ClCompile Include="src\RotateEuler.cpp" />
+    <ClCompile Include="src\Scale.cpp" />
+    <ClCompile Include="src\skel_scanner.cpp" />
+    <ClCompile Include="src\Trackball.cpp" />
+    <ClCompile Include="src\TransformNode.cpp" />
+    <ClCompile Include="src\Translate.cpp" />
+    <ClCompile Include="src\UICallback.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram1.cd" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
